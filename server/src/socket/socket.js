@@ -9,6 +9,11 @@ const Notification = require("../models/Notification");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 
+// Ensure these maps are defined globally,
+// or you can define them locally and pass them as needed.
+global.msgSocketMap = global.msgSocketMap || {};
+global.notifySocketMap = global.notifySocketMap || {};
+
 // env config
 dotenv.config();
 

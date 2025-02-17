@@ -1,6 +1,6 @@
 import API from "./index";
 
-export const signIn = (fields) =>
+export const adminSignIn = (fields) =>
     API.post("/admin/login", fields).catch((error) => {
         return error.response;
     });

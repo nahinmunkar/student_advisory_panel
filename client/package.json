@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.2.0",
+    "@craco/craco": "^5.9.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.2",
@@ -13,18 +13,18 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
+    "axios": "^1.7.9",
     "chart.js": "^3.7.1",
     "date-fns": "^2.28.0",
     "moment": "^2.29.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
     "react": "^17.0.2",
     "react-chartjs-2": "^4.1.0",
     "react-dom": "^17.0.2",
-    "react-google-recaptcha": "^2.1.0",
     "react-image-file-resizer": "^0.4.7",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.3",
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
@@ -32,11 +32,12 @@
     "socket.io-client": "^4.4.1",
     "suneditor": "^2.41.3",
     "suneditor-react": "^3.3.0",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "webpack": "^5.97.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -59,8 +60,8 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.1.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

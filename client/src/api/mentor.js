@@ -7,6 +7,8 @@ export const signIn = (fields) =>
 
 export const signUp = (fields) =>
     API.post("/mentor/signup", fields).catch((error) => {
+        // console.log("hello signUp")
+        console.log("backend: " + fields)
         return error.response;
     });
 

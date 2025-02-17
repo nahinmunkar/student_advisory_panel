@@ -3,20 +3,21 @@ import * as api from "../api/admin";
 import { getLogs } from "../api/logs";
 import { showToast } from "../components/toast/toast";
 
-export const adminSignIn = (fields, history) => async (dispatch) => {
+// Example for adminSignIn action
+export const adminSignIn = (formData) => async (dispatch) => {
     try {
-        const { data } = await api.signIn(fields);
-        if (data.code === 200) {
-            dispatch({ type: "SIGN_IN_ADMIN", data });
-            history.push("/admin/dashboard");
-        } else {
-            showToast("error", data.msg, 10000, toast.POSITION.TOP_RIGHT);
-        }
+      const { data } = await api.adminSignIn(formData);
+      
+      dispatch({ type: 'AUTH', payload: data });
+      
+      return true; // Return true on success
     } catch (error) {
-        console.log(error);
+      const message = error.response?.data?.message || 'Something went wrong';
+      throw new Error(message);
     }
-};
+  };
 
+  
 export const adminGetDetails = () => async (dispatch) => {
     try {
         const { data } = await api.fetchAdmin();

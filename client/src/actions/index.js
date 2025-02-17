@@ -17,7 +17,7 @@ export const sendForgotPassword = (email, setShowModal) => async (dispatch) => {
         console.log(error);
     }
 };
-
+/*
 export const verifyRecaptcha = (token, setRecaptcha) => async (dispatch) => {
     try {
         const { data } = await sendRecaptcha(token);
@@ -32,3 +32,14 @@ export const verifyRecaptcha = (token, setRecaptcha) => async (dispatch) => {
         console.log(error);
     }
 };
+*/
+
+export const verifyRecaptcha = (token) => async (dispatch) => {
+    try {
+      const { data } = await sendRecaptcha(token);
+      return data.success; // Return verification status
+    } catch (error) {
+      console.error("reCAPTCHA verification failed:", error);
+      return false;
+    }
+  };
